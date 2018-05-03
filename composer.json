@@ -1,0 +1,17 @@
+{
+    "name": "gilmar.pupo/jackalope-jackrabbit-by-example",
+    "description": "Usage of jackalope-jackrabbit",
+    "type": "project",
+    "require": {
+        "jackalope/jackalope-jackrabbit": "^1.3",
+        "symfony/var-dumper": "^4.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gilmar Pupo",
+            "email": "contact@gpupo.com"
+        }
+    ],
+    "minimum-stability": "alpha"
+}
