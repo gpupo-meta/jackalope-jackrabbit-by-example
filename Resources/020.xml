@@ -1,0 +1,42 @@
+<sv:node
+     xmlns:mix="http://www.jcp.org/jcr/mix/1.0"
+     xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     xmlns:jcr="http://www.jcp.org/jcr/1.0"
+     xmlns:sv="http://www.jcp.org/jcr/sv/1.0"
+     xmlns:rep="internal"
+
+    sv:name="idExample"
+>
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>nt:unstructured</sv:value>
+    </sv:property>
+
+    <sv:node sv:name="target">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>nt:unstructured</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
+            <sv:value>mix:referenceable</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcr:uuid" sv:type="String">
+            <sv:value>13543fc6-1abf-4708-bfcc-e49511754b40</sv:value>
+        </sv:property>
+        <sv:property sv:name="someproperty" sv:type="String">
+            <sv:value>Some value</sv:value>
+        </sv:property>
+    </sv:node>
+
+    <sv:node sv:name="source">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>nt:unstructured</sv:value>
+        </sv:property>
+        <sv:property sv:name="reference" sv:type="WeakReference">
+            <sv:value>13543fc6-1abf-4708-bfcc-e49511754b40</sv:value>
+        </sv:property>
+        <sv:property sv:name="path" sv:type="Path">
+            <sv:value>../target/someproperty</sv:value>
+        </sv:property>
+    </sv:node>
+
+</sv:node>
