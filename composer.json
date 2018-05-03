@@ -1,6 +1,6 @@
 {
-    "name": "gilmar.pupo/jackalope-jackrabbit-by-example",
-    "description": "Usage of jackalope-jackrabbit",
+    "name": "gpupo/jackalope-jackrabbit-by-example",
+    "description": "Usage of phpcr with jackalope-jackrabbit",
     "type": "project",
     "require": {
         "jackalope/jackalope-jackrabbit": "^1.3",
