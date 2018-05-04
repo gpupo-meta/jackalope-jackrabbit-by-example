@@ -10,7 +10,7 @@ use Jackalope\RepositoryFactoryJackrabbit;
 
 set_time_limit(0);
 
-require __DIR__.'/vendor/autoload.php';
+require __DIR__.'/../../vendor/autoload.php';
 
 $parameters = ['jackalope.jackrabbit_uri' => 'http://localhost:8080/server'];
 $factory = new RepositoryFactoryJackrabbit();

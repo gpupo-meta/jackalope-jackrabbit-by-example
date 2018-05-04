@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for f in 0*php; do
+for f in src/*/0*php; do
   echo "File -> $f"
-  php $f;
+  #php $f;
 done
