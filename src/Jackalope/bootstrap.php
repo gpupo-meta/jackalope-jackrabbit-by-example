@@ -1,10 +1,8 @@
-
 <?php
 
 /**
- * The shortest self-contained example should output a line with ‘value’:.
  *
- * @see http://phpcr.readthedocs.io/en/latest/book/getting_started.html
+ * @see http://phpcr.readthedocs.io/en/latest/book/
  */
 use Jackalope\RepositoryFactoryJackrabbit;
 

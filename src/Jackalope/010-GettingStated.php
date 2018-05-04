@@ -17,6 +17,12 @@ declare(strict_types=1);
 
 require __DIR__.'/bootstrap.php';
 
+/**
+ * The shortest self-contained example should output a line with ‘value’:.
+ *
+ * @see http://phpcr.readthedocs.io/en/latest/book/getting_started.html
+ */
+
 // retrieve the root node of the repository ("/")
 $root = $session->getRootNode();
 
