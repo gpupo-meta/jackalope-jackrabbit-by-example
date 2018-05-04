@@ -1,11 +1,11 @@
-#!/usr/bin/env php
+
 <?php
 
 /**
  * Versioning is used to track changes in nodes with the possibility to get back to older versions.
+ *
  * @see http://phpcr.readthedocs.io/en/latest/book/versioning.html
  */
-
 require __DIR__.'/bootstrap.php';
 
 //get the node from the session
@@ -31,15 +31,15 @@ $version = $versionManager->checkin($node->getPath());
 $oldversion = $version->getLinearPredecessor();
 // the version objects are just the meta data. call getFrozenNode on them
 // to get a snapshot of the data when the version was created
-echo $version->getName() . ': ' . $version->getFrozenNode()->getPropertyValue('foo') . "\n"; // 1.1: bar
-echo $oldversion->getName() . ': ' . $oldversion->getFrozenNode()->getPropertyValue('foo'); // 1.0: fafa
+echo $version->getName().': '.$version->getFrozenNode()->getPropertyValue('foo')."\n"; // 1.1: bar
+echo $oldversion->getName().': '.$oldversion->getFrozenNode()->getPropertyValue('foo'); // 1.0: fafa
 
 // get the full version history
 $history = $versionManager->getVersionHistory($node->getPath());
 foreach ($history->getAllFrozenNodes() as $node) {
     if ($node->hasProperty('foo')) {
         // the root version does not have the property
-        echo $node->getPropertyValue('foo') . "\n";
+        echo $node->getPropertyValue('foo')."\n";
     }
 }
 

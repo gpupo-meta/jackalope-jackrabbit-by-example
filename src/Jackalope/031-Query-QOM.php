@@ -1,4 +1,4 @@
-#!/usr/bin/env php
+
 <?php
 
 /**
@@ -12,9 +12,9 @@ require __DIR__.'/bootstrap.php';
 $workspace = $session->getWorkspace();
 $qomFactory = $workspace->getQueryManager()->getQOMFactory();
 $source = $qomFactory->selector('a', '[nt:unstructured]');
-$query = $qomFactory->createQuery($source, null, array(), array());
+$query = $qomFactory->createQuery($source, null, [], []);
 $queryResult = $query->execute();
 
 foreach ($queryResult->getNodes() as $path => $node) {
-    echo $node->getName() . "\n";
+    echo $node->getName()."\n";
 }

@@ -17,18 +17,21 @@ declare(strict_types=1);
 
 require __DIR__.'/bootstrap.php';
 
-// retrieve the root node of the repository ("/")
-$root = $session->getRootNode();
+use Doctrine\ODM\PHPCR\Document\Generic;
+use PHPCR\ItemExistsException;
 
-// add a new node
-$node = $root->addNode('test', 'nt:unstructured');
+$catalog = new Generic();
+$catalog->setNodename('catalog');
+$catalog->setParentDocument($documentManager->find(null, '/'));
 
-// set a property on the newly created property
-$node->setProperty('prop', 'value');
+$product = new Generic();
+$product->setNodename('product');
+$product->setParentDocument($catalog);
 
-// save the session, i.e. persist the data
-$session->save();
-
-// retrieve the newly created node
-$node = $session->getNode('/test');
-echo $node->getPropertyValue('prop'); // outputs "value"
+try {
+    $documentManager->persist($catalog);
+    $documentManager->persist($product);
+    $documentManager->flush();
+} catch (ItemExistsException $e) {
+    echo sprintf("Warning: %s \n", $e->getMessage());
+}

@@ -1,11 +1,11 @@
-#!/usr/bin/env php
+
 <?php
 
 /**
- * Creating and updating nodes
+ * Creating and updating nodes.
+ *
  * @see http://phpcr.readthedocs.io/en/latest/book/writing.html
  */
-
 require __DIR__.'/bootstrap.php';
 
 //get the node from the session
@@ -19,7 +19,6 @@ $newproperty = $newnode->setProperty('my property', 'my value');
 
 // persist the changes permanently. now they also become visible in other sessions
 $session->save();
-
 
 // have a reference
 $targetnode = $session->getNode('/data/sibling/yetanother');

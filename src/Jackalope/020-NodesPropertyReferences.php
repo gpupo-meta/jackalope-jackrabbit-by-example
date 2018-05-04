@@ -1,4 +1,4 @@
-#!/usr/bin/env php
+
 <?php
 
 /**
@@ -12,8 +12,6 @@ require __DIR__.'/bootstrap.php';
 
 $session->importXML('/', __DIR__.'/../../Resources/020.xml', \PHPCR\ImportUUIDBehaviorInterface::IMPORT_UUID_CREATE_NEW);
 $session->save();
-
-
 
 $node = $session->getNode('/idExample/source');
 // will return you a node if the property is of type REFERENCE or WEAKREFERENCE
@@ -29,5 +27,5 @@ $othernode = $property->getNode();
 // get a referenced property
 $property = $node->getProperty('path');
 $otherproperty = $property->getProperty();
-echo $otherproperty->getName() . "\n"; // someproperty
-echo $otherproperty->getValue(). "\n"; // Some value
+echo $otherproperty->getName()."\n"; // someproperty
+echo $otherproperty->getValue()."\n"; // Some value

@@ -1,14 +1,14 @@
-#!/usr/bin/env php
+
 <?php
 
 /**
  * In PHPCR, you can lock nodes to prevent concurrency issues. There are two basic types of locks:
  * - Session based locks are only kept until your session ends and released automatically on logout.
  * - If a lock is not session based, it is identified by a lock token and stays in place until it times out
- * Note that Jackalope currently only implements session based locks:
+ * Note that Jackalope currently only implements session based locks:.
+ *
  * @see http://phpcr.readthedocs.io/en/latest/book/locking.html
  */
-
 require __DIR__.'/bootstrap.php';
 
 //get the node from the session
