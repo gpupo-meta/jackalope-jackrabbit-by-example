@@ -47,6 +47,7 @@ AnnotationRegistry::registerLoader([$autoload, 'loadClass']);
 $reader = new AnnotationReader();
 $driver = new AnnotationDriver($reader, [
     // this is a list of all folders containing document classes
+    __DIR__.'/Document/',
     'vendor/doctrine/phpcr-odm/lib/Doctrine/ODM/PHPCR/Document',
 ]);
 

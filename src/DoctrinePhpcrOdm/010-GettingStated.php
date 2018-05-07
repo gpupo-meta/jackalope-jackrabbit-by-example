@@ -16,7 +16,7 @@ declare(strict_types=1);
  */
 
 require __DIR__.'/bootstrap.php';
-require __DIR__.'/Document.php';
+require __DIR__.'/Document/Document.php';
 
 // get the root node to add our data to it
 $rootDocument = $documentManager->find(null, '/');
