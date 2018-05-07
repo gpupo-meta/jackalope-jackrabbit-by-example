@@ -4,7 +4,7 @@ Usage of phpcr with jackalope-jackrabbit
 
 Require composer
 
-	git clone git@github.com:gpupo/jackalope-jackrabbit-by-example.git;
+	git clone https://github.com/gpupo/jackalope-jackrabbit-by-example.git;
 	cd jackalope-jackrabbit-by-example;
 	./install.sh
 
