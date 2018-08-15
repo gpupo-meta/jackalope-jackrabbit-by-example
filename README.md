@@ -1,51 +1,36 @@
-Usage of phpcr with jackalope-jackrabbit
+Educational usage of phpcr with jackalope-jackrabbit
+
+## Requirements
+
+* Docker
+* Composer
+* Git
 
 ## Install
 
-Require composer
-
 	git clone https://github.com/gpupo/jackalope-jackrabbit-by-example.git;
 	cd jackalope-jackrabbit-by-example;
-	./install.sh
+	composer install
 
-## Examples
+## Content Repository Server
 
-### src/Jackalope
+Run [gpupo/content-repository-server](https://github.com/gpupo/content-repository-server)
 
-Operations using phpcr with jackalope-jackrabbit
+	docker run -p 8080:8080 gpupo/content-repository-server
 
-### src/DoctrinePhpcrOdm/
+Open [Jackrabbit JCR Server dashboard](https://localhost:8080) (optional)
 
-Operations using Doctrine PHPCR ODM over phpcr with jackalope-jackrabbit
-
-
-## Jackrabbit
-
-### Download
-
-
-More info in the [download page]( http://jackrabbit.apache.org/jcr/downloads.html)
-
-
-### Run jackrabbit server
-
-	./start-server.sh &
-
-At first time:
+At first time, register node types:
 
  	./vendor/bin/phpcrodm doctrine:phpcr:register-system-node-types
 
-### Watch logs
+More info for Jackrabbit [see]( http://jackrabbit.apache.org/)
 
-	tail -f var/jackrabbit/log/*
+## Examples
 
-### Rebuild
+* ``src/Jackalope`` - Operations using phpcr with jackalope-jackrabbit
+* ``src/DoctrinePhpcrOdm`` - Operations using Doctrine PHPCR ODM over phpcr with jackalope-jackrabbit
 
-1) Stop jackrabbit server
-2) Execute ``rm -rfv var/jackrabbit var/*UNDEFINED``
-3) Repeat step "Run jackrabbit server" like the first time
-
-
-## Execute examples
+Execute samples
 
 	./run-all.sh
